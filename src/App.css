@@ -18,8 +18,34 @@ ul {
 
   background-color: #3a3042;
 }
+.nav-wrapper {
+  height: 100%;
+}
+.nav-ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 30vw;
+  justify-content: space-around;
+}
 
 .nav-ul > li > a {
   text-decoration: none;
   color: #edffd9;
+  font-size: 22px;
+}
+
+/* FOOTER */
+
+/* site-footer */
+
+.site-footer {
+  padding: 80px 40px;
+  height: 25em;
+  background-color: #3a3042;
+}
+
+.footer-container {
+  padding: 0 80px;
+  max-width: 1440px;
 }
