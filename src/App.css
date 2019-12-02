@@ -1,6 +1,25 @@
+ul {
+  list-style-type: none;
+}
+
 .ComingSoon {
   display: grid;
   place-items: center;
   height: 100vh;
   background-color: #ebd4cb;
+}
+
+/* NAVIGATION */
+
+/* top nav bar */
+
+.Top-Nav {
+  height: 5em;
+
+  background-color: #3a3042;
+}
+
+.nav-ul > li > a {
+  text-decoration: none;
+  color: #edffd9;
 }

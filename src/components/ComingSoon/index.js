@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 
 export default ({ title }) => {
-  useEffect(() => (document.title = title), [title]);
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   return (
     <div className="ComingSoon">
