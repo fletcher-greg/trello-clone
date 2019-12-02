@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
+import ComingSoon from "../../components/ComingSoon";
 
 export default () => {
-  //   useEffect(() => (document.title = "Home"), []);
-  document.title = "home";
-  return <main className="Home">{document.title} </main>;
+  return (
+    <main className="Home">
+      <ComingSoon title="Home" />
+    </main>
+  );
 };
