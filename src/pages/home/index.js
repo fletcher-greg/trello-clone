@@ -1,10 +1,11 @@
 import React from "react";
-import ComingSoon from "../../components/ComingSoon";
+
+import Card from "../../components/card";
 
 export default () => {
   return (
     <main className="Home">
-      <ComingSoon title="Home" />
+      <Card />
     </main>
   );
 };

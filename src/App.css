@@ -2,6 +2,12 @@ ul {
   list-style-type: none;
 }
 
+/* HOME */
+
+.Home {
+  height: 100vh;
+  background-color: #ebd4cb;
+}
 .ComingSoon {
   display: grid;
   place-items: center;
@@ -48,4 +54,10 @@ ul {
 .footer-container {
   padding: 0 80px;
   max-width: 1440px;
+}
+
+/* CARD */
+
+.Card {
+  width: 272px;
 }
