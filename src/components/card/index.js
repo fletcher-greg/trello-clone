@@ -6,7 +6,7 @@ export default () => {
   let [clicked, setClicked] = useState(false);
   function handleClick(e) {
     if (node.current.contains(e.target)) {
-      console.log("inside me!");
+      console.log("woo");
       return;
     }
     console.log(node);
@@ -22,18 +22,16 @@ export default () => {
   }, []);
   return (
     <section className="Card">
-      <div className="card-header">
-        {clicked ? (
-          <textarea style={{ display: "none" }}></textarea>
-        ) : (
-          <h2
-            ref={node}
-            onClick={() => setClicked(true)}
-            className="card-title"
-          >
-            Cool Recipes
-          </h2>
-        )}
+      <div className="card-header" ref={node}>
+        <textarea style={clicked ? {} : { display: "none" }}></textarea>
+
+        <h2
+          style={clicked ? { display: "none" } : {}}
+          onClick={() => setClicked(true)}
+          className="card-title"
+        >
+          Cool Recipes
+        </h2>
       </div>
     </section>
   );
