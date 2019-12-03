@@ -6,7 +6,7 @@ export default () => (
     <section className="nav-wrapper">
       <ul className="nav-ul">
         <li className="test">
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>

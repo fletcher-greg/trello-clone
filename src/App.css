@@ -60,4 +60,98 @@ ul {
 
 .Card {
   width: 272px;
+
+  margin-left: 1em;
+  border-radius: 5px;
+}
+
+.topic-title {
+  width: 100%;
+  height: 40px;
+  font-size: 22px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.list-cards {
+  height: auto;
+}
+.card-label {
+  display: inline-block;
+  height: 8px;
+  width: 30px;
+  border-radius: 5px;
+  background: #ff784f;
+}
+.card-click {
+  background: #ffe19c;
+  cursor: pointer;
+  display: block;
+  min-height: 20px;
+  border-radius: 10px;
+  padding: 5px 8px;
+}
+
+.card-add-btn {
+  display: block;
+  border: 3px solid #de3c4b;
+  color: #de3c4b;
+  padding: 0.7em 0.8em;
+  margin-top: 0.4em;
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+}
+
+/* HERO*/
+
+.Hero {
+  min-height: 100vh;
+}
+
+.Hero .banner {
+  background-color: #ffe19c;
+  height: 30em;
+  display: grid;
+  place-items: center;
+}
+.more-info {
+  height: 40em;
+  background-color: #de3c4b;
+}
+
+/* INPUTBUTTON */
+.sub-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.sub-input {
+  background-color: #fff1d0;
+  border: none;
+  color: #3a3042;
+  outline: none;
+  width: 23em;
+  padding: 1em 1.2em;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.sub-btn {
+  margin-left: 0.8em;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: #ff784f;
+  border: none;
+  outline: none;
+  padding: 0.4em 2em;
+  border-radius: 10px;
 }
