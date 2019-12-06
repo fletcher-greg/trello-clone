@@ -19,6 +19,8 @@ ul {
 .cards-wrapper {
   max-width: 1400px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 /* NAVIGATION */
 
@@ -65,7 +67,6 @@ ul {
 
 .Card {
   width: 272px;
-
   margin-left: 1em;
   border-radius: 5px;
 }
@@ -160,4 +161,104 @@ ul {
   outline: none;
   padding: 0.4em 2em;
   border-radius: 10px;
+}
+.Login {
+  background: #2e294e;
+  display: grid;
+
+  place-items: center;
+  height: 100vh;
+}
+.login-form {
+  background-color: #f2fdff;
+  display: grid;
+  grid-template-rows: 2fr 1fr 4fr;
+  height: 618px;
+  width: 603px;
+  border-radius: 22px;
+  text-align: center;
+}
+.login-title {
+  font-size: 4rem;
+  font-weight: 700;
+  place-self: center;
+}
+.Login .login-input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #2e294e;
+  width: 300px;
+}
+.Login .btn-login {
+  background: #2e294e;
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  place-self: center;
+}
+
+.Login .input-container {
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  height: 100px;
+  width: 300px;
+  place-self: center;
+}
+/* Register */
+
+.Register {
+  background: #2e294e;
+  display: grid;
+
+  place-items: center;
+  height: 100vh;
+}
+.register-form {
+  background-color: #f2fdff;
+  display: grid;
+  grid-template-rows: 2fr 1fr 4fr;
+  height: 618px;
+  width: 603px;
+  border-radius: 22px;
+  text-align: center;
+}
+.register-title {
+  font-size: 4rem;
+  font-weight: 700;
+  place-self: center;
+}
+.Register .register-input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #2e294e;
+  width: 300px;
+}
+.Register .btn-register {
+  background: #2e294e;
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  place-self: center;
+}
+
+.Register .input-container {
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  height: 100px;
+  width: 300px;
+  place-self: center;
 }
