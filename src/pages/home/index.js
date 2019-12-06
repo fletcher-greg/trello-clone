@@ -5,7 +5,9 @@ import Card from "../../components/card";
 export default () => {
   return (
     <main className="Home">
-      <Card />
+      <div className="cards-wrapper">
+        <Card />
+      </div>
     </main>
   );
 };

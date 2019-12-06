@@ -6,15 +6,20 @@ ul {
 
 .Home {
   height: 100vh;
+
   background-color: #ebd4cb;
 }
+
 .ComingSoon {
   display: grid;
   place-items: center;
   height: 100vh;
   background-color: #ebd4cb;
 }
-
+.cards-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 /* NAVIGATION */
 
 /* top nav bar */
@@ -74,6 +79,7 @@ ul {
   border: none;
   outline: none;
   resize: none;
+  overflow: hidden;
 }
 
 .list-cards {
