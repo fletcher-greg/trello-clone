@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import TextArea from "react-textarea-autosize";
-export default ({ placeHolder, title }) => {
+import { CONSTANTS } from "../../store/actions/index";
+import { AppState } from "../../App";
+export default ({ placeHolder, title, type, id }) => {
+  const [, dispatch] = useContext(AppState);
   const [text, setText] = useState("");
   // const [newCard, setNewCard] = useState(false);
   const [open, setOpen] = useState(false);
@@ -23,7 +26,15 @@ export default ({ placeHolder, title }) => {
         </button>
       ) : (
         <>
-          <button>Add Card</button>
+          <button
+            onMouseDown={() =>
+              dispatch(
+                id ? { type, payload: text, id } : { type, payload: text, id }
+              )
+            }
+          >
+            Add Card
+          </button>
           <button>X</button>
         </>
       )}{" "}

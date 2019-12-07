@@ -3,7 +3,7 @@ import { AppState } from "../../App";
 import { getInitData } from "../../services/index";
 import Card from "../../components/card";
 import AddNew from "../../components/card/AddNew";
-
+import { CONSTANTS } from "../../store/actions";
 export default () => {
   const [state, dispatch] = useContext(AppState);
 
@@ -20,10 +20,14 @@ export default () => {
     <main className="Home">
       <div className="cards-wrapper">
         {state.map(card => (
-          <Card card={card} />
+          <Card listID={card.id} card={card} />
         ))}
         <div className="add-new-card">
-          <AddNew placeHolder="List Title" title="Add another list" />
+          <AddNew
+            type={CONSTANTS.ADD_LIST}
+            placeHolder="List Title"
+            title="Add another list"
+          />
         </div>
       </div>
     </main>

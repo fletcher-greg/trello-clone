@@ -1,15 +1,15 @@
 import React, { useState, useRef, useContext } from "react";
 import { AppState } from "../../App";
 import AddNew from "./AddNew";
-
-export default ({ card }) => {
+import { CONSTANTS } from "../../store/actions/index";
+export default ({ listID, card }) => {
   const [state, dispatch] = useContext(AppState);
   const [text, setText] = useState("false");
   const [newCard, setNewCard] = useState(false);
   const [open, setOpen] = useState(false);
   const placeHolder = state ? "Enter a title" : "Enter a title for this card";
   const title = state ? "Add another Card" : "Add Card";
-
+  // console.log(`testing out constants ${CONSTANTS.ADD_CARD}`);
   const node = useRef();
   // let [title, setTitle] = useState("New title");
   // let [clicked, setClicked] = useState(false);
@@ -50,7 +50,12 @@ export default ({ card }) => {
             </a>
           </div>
         ))}
-        <AddNew placeHolder={placeHolder} title={title} />
+        <AddNew
+          id={listID}
+          type={CONSTANTS.ADD_CARD}
+          placeHolder={placeHolder}
+          title={title}
+        />
       </div>
     </section>
   );
