@@ -8,6 +8,7 @@ This project is a trello clone inspired app
 - [x] login page
 - [x] register page
 - [ ] auto cache and login check
+- [ ] sideeffect ==> send data to database
 
 #### Author
 
