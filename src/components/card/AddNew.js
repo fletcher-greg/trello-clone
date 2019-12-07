@@ -1,13 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import TextArea from "react-textarea-autosize";
 import { CONSTANTS } from "../../store/actions/index";
 import { AppState } from "../../App";
 export default ({ placeHolder, title, type, id }) => {
-  const [, dispatch] = useContext(AppState);
+  const [state, dispatch] = useContext(AppState);
   const [text, setText] = useState("");
+  const [test, setTest] = useState("");
   // const [newCard, setNewCard] = useState(false);
   const [open, setOpen] = useState(false);
-
+  useEffect(() => {
+    console.log("state changed");
+    console.log(state);
+  }, [test]);
   return (
     <>
       {open && (
@@ -27,11 +31,11 @@ export default ({ placeHolder, title, type, id }) => {
       ) : (
         <>
           <button
-            onMouseDown={() =>
-              dispatch(
-                id ? { type, payload: text, id } : { type, payload: text, id }
-              )
-            }
+            onMouseDown={() => {
+              return dispatch(
+                id ? { type, payload: text, id } : { type, payload: text }
+              );
+            }}
           >
             Add Card
           </button>
