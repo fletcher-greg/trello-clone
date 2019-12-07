@@ -20,22 +20,18 @@ export const listReducer = (state, action) => {
     case CONSTANTS.ADD_LIST:
       const newList = { title: action.payload, id: listID, cards: [] };
       listID += 1;
-      console.log("list time");
+
       return [...state, newList];
     case "ADD":
-      console.log([...state, { cards: [...action.cards] }]);
       return [...state, { cards: [...action.cards] }];
     case CONSTANTS.ADD_CARD:
-      console.log(state.id);
       const newState = state.map(list => {
         if (list.id === action.id) {
           const newCard = { id: cardID, text: action.payload };
           cardID += 1;
-          console.log("lets try it");
-          console.log(newCard);
+
           return { ...list, cards: [...list.cards, newCard] };
         } else {
-          console.log("lol error");
           return list;
         }
       });
