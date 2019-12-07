@@ -66,11 +66,16 @@ ul {
 /* CARD */
 
 .Card {
+  padding: 2em 1em;
   width: 272px;
   margin-left: 1em;
-  border-radius: 5px;
+  min-height: 500px;
+  background-color: #f2fdff;
 }
-
+.add-new-card {
+  width: 272px;
+  margin-left: 1em;
+}
 .topic-title {
   width: 100%;
   height: 40px;
@@ -100,6 +105,33 @@ ul {
   min-height: 20px;
   border-radius: 10px;
   padding: 5px 8px;
+  margin-bottom: 1em;
+}
+
+.new-card {
+  background: white;
+  cursor: pointer;
+  display: block;
+  min-height: 20px;
+  width: 100%;
+  text-align: start;
+  padding: 5px 8px;
+  margin-bottom: 1em;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
+.card-textarea {
+  background: white;
+  width: 95%;
+  min-height: 100px;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 1em;
 }
 
 .card-add-btn {

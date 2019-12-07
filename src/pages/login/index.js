@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { login } from "../../services/index";
+import { UserLogin } from "../../App";
 
 export default () => {
+  const [user, setUser] = useContext(UserLogin);
   const attemptLogin = async e => {
     e.preventDefault();
 
@@ -12,7 +14,7 @@ export default () => {
         password: "3p0asdfads"
       });
       console.log(data);
-
+      setUser(true);
       return;
     } catch (err) {
       console.log("error");
@@ -28,7 +30,7 @@ export default () => {
           <input className="login-input" placeholder="Password" />
         </div>
         <button onClick={e => attemptLogin(e)} className="btn-login">
-          Login
+          {user ? "false" : "Login"}
         </button>
       </form>
     </div>

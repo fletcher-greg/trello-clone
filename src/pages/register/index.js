@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { register } from "../../services/index";
+import { UserLogin } from "../../App";
+
 export default () => {
+  const [, setUser] = useContext(UserLogin);
   const attemptReg = async e => {
     e.preventDefault();
 
@@ -12,6 +15,7 @@ export default () => {
         firstName: "willy"
       });
       console.log(data);
+      setUser(true);
 
       return;
     } catch (err) {

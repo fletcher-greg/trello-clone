@@ -1,8 +1,15 @@
 import React, { useState, useRef, useContext } from "react";
 import { AppState } from "../../App";
+import AddNew from "./AddNew";
 
 export default ({ card }) => {
   const [state, dispatch] = useContext(AppState);
+  const [text, setText] = useState("false");
+  const [newCard, setNewCard] = useState(false);
+  const [open, setOpen] = useState(false);
+  const placeHolder = state ? "Enter a title" : "Enter a title for this card";
+  const title = state ? "Add another Card" : "Add Card";
+
   const node = useRef();
   // let [title, setTitle] = useState("New title");
   // let [clicked, setClicked] = useState(false);
@@ -43,8 +50,14 @@ export default ({ card }) => {
             </a>
           </div>
         ))}
+        <AddNew placeHolder={placeHolder} title={title} />
       </div>
-      <button
+    </section>
+  );
+};
+
+{
+  /* <button
         onClick={() =>
           dispatch({
             type: "ADD",
@@ -54,7 +67,5 @@ export default ({ card }) => {
         className="card-add-btn"
       >
         Add Another
-      </button>
-    </section>
-  );
-};
+      </button> */
+}
