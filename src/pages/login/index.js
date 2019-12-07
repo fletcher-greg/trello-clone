@@ -2,7 +2,7 @@ import React from "react";
 import { login } from "../../services/index";
 
 export default () => {
-  const login = async e => {
+  const attemptLogin = async e => {
     e.preventDefault();
 
     try {
@@ -23,7 +23,7 @@ export default () => {
           <input className="login-input" placeholder="Email" />
           <input className="login-input" placeholder="Password" />
         </div>
-        <button onClick={e => login} className="btn-login">
+        <button onClick={e => attemptLogin(e)} className="btn-login">
           Login
         </button>
       </form>
