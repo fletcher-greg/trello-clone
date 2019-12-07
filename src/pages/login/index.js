@@ -14,7 +14,8 @@ export default () => {
         password: "3p0asdfads"
       });
       console.log(data);
-      setUser(true);
+      setUser(1234);
+      console.log("hi there my friends");
       return;
     } catch (err) {
       console.log("error");
