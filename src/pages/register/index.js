@@ -5,7 +5,12 @@ export default () => {
     e.preventDefault();
 
     try {
-      let { data } = await register(FormData);
+      let { data } = await register({
+        email: "asdfjasld@gmail.com",
+        password: "3p0asdfads",
+        lastName: "billy",
+        firstName: "willy"
+      });
       console.log(data);
 
       return;

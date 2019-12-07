@@ -14,8 +14,9 @@ let api = axios.create({
 });
 export const register = async formData => {
   try {
+    console.log(formData);
     let { data } = await api.post("/auth/register", {
-      formData
+      ...formData
     });
 
     console.log(data);
@@ -27,9 +28,10 @@ export const register = async formData => {
   }
 };
 export const login = async formData => {
+  console.log(formData);
   try {
     let { data } = await api.post("/auth/login", {
-      formData
+      ...formData
     });
 
     console.log(data);
@@ -48,7 +50,6 @@ export const subscribe = async email => {
       email: email
     });
     return message.data ? true : false;
-    return;
   } catch (err) {
     console.log(err);
     return;

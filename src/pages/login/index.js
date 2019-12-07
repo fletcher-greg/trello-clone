@@ -6,7 +6,11 @@ export default () => {
     e.preventDefault();
 
     try {
-      let { data } = await login(FormData);
+      console.log("attempt");
+      let { data } = await login({
+        email: "asdfjasld@gmail.com",
+        password: "3p0asdfads"
+      });
       console.log(data);
 
       return;
