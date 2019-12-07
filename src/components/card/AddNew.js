@@ -1,17 +1,36 @@
 import React, { useState, useContext, useEffect } from "react";
 import TextArea from "react-textarea-autosize";
-
+import { updateDB } from "../../services";
+import { CONSTANTS } from "../../store/actions/index";
 import { AppState } from "../../App";
 
 export default ({ placeHolder, title, type, id }) => {
   const [state, dispatch] = useContext(AppState);
   const [text, setText] = useState("");
-  const [test, setTest] = useState("simet");
+  const [data, setData] = useState("");
 
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    console.log(`it changed my frieends `);
-  }, [test]);
+    async function sendData() {
+      try {
+        let result = await updateDB(data);
+        if (result.message === "successful update") {
+          dispatch({ type: CONSTANTS.UPDATE_SUCCESS });
+          console.log("we did it!");
+        } else if (result.message === "disconnected") {
+          console.log(result);
+          dispatch({
+            type: CONSTANTS.DISCONNECTED,
+            payload: result.payload,
+            id: 2
+          });
+        }
+      } catch (err) {
+        return "error";
+      }
+    }
+    sendData();
+  }, [data]);
   return (
     <>
       {open && (
@@ -32,7 +51,9 @@ export default ({ placeHolder, title, type, id }) => {
         <>
           <button
             onMouseDown={() => {
-              setTest(true);
+              setData(
+                id ? { type, payload: text, id } : { type, payload: text }
+              );
               return dispatch(
                 id ? { type, payload: text, id } : { type, payload: text }
               );

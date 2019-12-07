@@ -31,7 +31,6 @@ export const listReducer = (state, action) => {
     case "ADD":
       return [...state, { cards: [...action.cards] }];
     case CONSTANTS.ADD_CARD:
-      console.log("a test!");
       const newState = state.cardData.map(list => {
         if (list.id === action.id) {
           const newCard = { id: cardID, text: action.payload };
@@ -46,13 +45,20 @@ export const listReducer = (state, action) => {
       // TODO dispatch and check to see if it was sucessfull.  if not, delete the card/message
       return { dbSync: !state.dbSync, cardData: [...newState] };
 
+    case CONSTANTS.UPDATE_SUCCESS:
+      return { dbSync: false, cardData: [...state.cardData] };
+    case CONSTANTS.DISCONNECTED:
+      const theState = state.cardData.filter(card => {
+        if (card.id < 2) {
+          return card;
+        }
+      });
+
+      return { dbSync: state.dbSync, cardData: [...theState] };
     case "INIT":
-      console.log("the datas");
-      console.log(action.data);
       return action.data;
 
     default:
-      console.log(action.type);
       console.log("made it to default");
       return state;
   }

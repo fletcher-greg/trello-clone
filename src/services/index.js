@@ -66,3 +66,13 @@ export const getInitData = async () => {
     console.log(err);
   }
 };
+
+export const updateDB = async data => {
+  try {
+    let result = await api.post("/auth/update-user-list", { data });
+
+    return { message: result.data.message, payload: data.payload, id: data.id };
+  } catch (err) {
+    return "error";
+  }
+};
