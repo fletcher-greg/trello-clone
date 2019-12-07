@@ -5,8 +5,8 @@ This project is a trello clone inspired app
 ### Tasks
 
 - [ ] expand cards
-- [ ] login page
-- [ ] register page
+- [x] login page
+- [x] register page
 - [ ] auto cache and login check
 
 #### Author
