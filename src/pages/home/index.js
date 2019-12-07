@@ -9,9 +9,10 @@ export default () => {
 
   useEffect(() => {
     async function fetchData() {
+      console.log("got data");
       let data = await getInitData();
-
-      dispatch({ type: "INIT", data });
+      console.log(data.cardData);
+      dispatch({ type: "INIT", data: data });
     }
 
     fetchData();
@@ -19,7 +20,7 @@ export default () => {
   return (
     <main className="Home">
       <div className="cards-wrapper">
-        {state.map(card => (
+        {state.cardData.map(card => (
           <Card listID={card.id} card={card} />
         ))}
         <div className="add-new-card">

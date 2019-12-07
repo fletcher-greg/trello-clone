@@ -23,6 +23,7 @@ export const UserLogin = createContext([null, () => {}]);
 function App() {
   const [state, dispatch] = useReducer(listReducer, initState);
   const [user, setUser] = useState(null);
+  console.log("the state of my app");
   console.log(state);
   console.log(`user: ${user}`);
   return (

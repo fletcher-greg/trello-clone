@@ -59,9 +59,9 @@ export const subscribe = async email => {
 export const getInitData = async () => {
   try {
     let data = await api.get("/auth/user-data");
-    console.log(data.data.data);
+    console.log(data.data.cardData);
 
-    return data.data.data;
+    return data.data;
   } catch (err) {
     console.log(err);
   }

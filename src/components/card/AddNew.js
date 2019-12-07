@@ -1,16 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
 import TextArea from "react-textarea-autosize";
-import { CONSTANTS } from "../../store/actions/index";
+
 import { AppState } from "../../App";
+
 export default ({ placeHolder, title, type, id }) => {
   const [state, dispatch] = useContext(AppState);
   const [text, setText] = useState("");
-  const [test, setTest] = useState("");
-  // const [newCard, setNewCard] = useState(false);
+  const [test, setTest] = useState("simet");
+
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    console.log("state changed");
-    console.log(state);
+    console.log(`it changed my frieends `);
   }, [test]);
   return (
     <>
@@ -32,6 +32,7 @@ export default ({ placeHolder, title, type, id }) => {
         <>
           <button
             onMouseDown={() => {
+              setTest(true);
               return dispatch(
                 id ? { type, payload: text, id } : { type, payload: text }
               );
