@@ -12,19 +12,28 @@ import axios from "axios";
 let api = axios.create({
   baseURL: "/api"
 });
-export const register = async e => {
-  e.preventDefault();
-
+export const register = async formData => {
   try {
     let { data } = await api.post("/auth/register", {
-      firstName: "blumenkopf",
-      lastName: "buddy",
-      email: "gimme@gmail.com",
-      password: "fadhasdkfasdfsc"
+      formData
     });
 
     console.log(data);
+    return data;
+  } catch (err) {
+    console.log(err);
+
     return;
+  }
+};
+export const login = async formData => {
+  try {
+    let { data } = await api.post("/auth/login", {
+      formData
+    });
+
+    console.log(data);
+    return data;
   } catch (err) {
     console.log(err);
 
