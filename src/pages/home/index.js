@@ -19,12 +19,13 @@ export default () => {
 
     fetchData();
   }, []);
-  // useEffect(()=> {
-
-  // }, [])
+  useEffect(() => {
+    setDiscon(state.disconnected);
+    console.log("wooohooo");
+  });
   return (
     <main className="Home">
-      {true && <Disconnected />}
+      {discon && <Disconnected />}
       <div className="cards-wrapper">
         {state.cardData.map(card => (
           <Card listID={card.id} card={card} />
