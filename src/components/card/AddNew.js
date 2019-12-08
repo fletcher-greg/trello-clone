@@ -8,17 +8,16 @@ export default ({ placeHolder, title, type, id }) => {
   const [state, dispatch] = useContext(AppState);
   const [text, setText] = useState("");
   const [data, setData] = useState("");
-
+  const [once, setOnce] = useState("");
   const [open, setOpen] = useState(false);
   useEffect(() => {
     async function sendData() {
+      let result;
       try {
-        let result = await updateDB(data);
+        result = await updateDB(data);
         if (result.message === "successful update") {
           dispatch({ type: CONSTANTS.UPDATE_SUCCESS });
-          console.log("we did it!");
-        } else if (result.message === "disconnected") {
-          console.log(result);
+        } else {
           dispatch({
             type: CONSTANTS.DISCONNECTED,
             payload: result.payload,
@@ -26,11 +25,16 @@ export default ({ placeHolder, title, type, id }) => {
           });
         }
       } catch (err) {
-        return "error";
+        dispatch({
+          type: CONSTANTS.DISCONNECTED,
+          payload: result.payload,
+          id: 2
+        });
+        return;
       }
     }
     sendData();
-  }, [data]);
+  }, [once]);
   return (
     <>
       {open && (
@@ -51,9 +55,10 @@ export default ({ placeHolder, title, type, id }) => {
         <>
           <button
             onMouseDown={() => {
-              setData(
-                id ? { type, payload: text, id } : { type, payload: text }
-              );
+              setOnce("hi");
+              //   setData(
+              //     id ? { type, payload: text, id } : { type, payload: text }
+              //   );
               return dispatch(
                 id ? { type, payload: text, id } : { type, payload: text }
               );
