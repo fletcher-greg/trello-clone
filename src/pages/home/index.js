@@ -1,11 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppState } from "../../App";
 import { getInitData } from "../../services/index";
 import Card from "../../components/card";
 import AddNew from "../../components/card/AddNew";
+import Disconnected from "../../components/errors/Disconnected";
 import { CONSTANTS } from "../../store/actions";
 export default () => {
   const [state, dispatch] = useContext(AppState);
+  const [discon, setDiscon] = useState(state.disconnected);
 
   useEffect(() => {
     async function fetchData() {
@@ -17,8 +19,12 @@ export default () => {
 
     fetchData();
   }, []);
+  // useEffect(()=> {
+
+  // }, [])
   return (
     <main className="Home">
+      {true && <Disconnected />}
       <div className="cards-wrapper">
         {state.cardData.map(card => (
           <Card listID={card.id} card={card} />

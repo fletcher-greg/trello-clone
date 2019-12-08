@@ -54,7 +54,11 @@ export const listReducer = (state, action) => {
         }
       });
 
-      return { dbSync: state.dbSync, cardData: [...theState] };
+      return {
+        dbSync: state.dbSync,
+        disconnected: true,
+        cardData: [...theState]
+      };
     case "INIT":
       return action.data;
 

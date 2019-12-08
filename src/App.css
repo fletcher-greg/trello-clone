@@ -294,3 +294,27 @@ ul {
   width: 300px;
   place-self: center;
 }
+
+/* ERRORS */
+
+.disconnected {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+
+  display: grid;
+  place-items: center;
+  background-color: #f2fdff;
+  border-radius: 22px;
+  height: 618px;
+  width: 603px;
+  text-align: center;
+}
+
+.disconnected-msg {
+  color: #3a3042;
+  font-size: 2rem;
+}
