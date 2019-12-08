@@ -60,6 +60,16 @@ export const listReducer = (state, action) => {
         disconnected: true,
         cardData: [...theState]
       };
+
+    case "ADD_COMMENT":
+      let { id, text } = action.data;
+      const activity = state.cardData.map(card =>
+        card.cards.filter(test => test.activity.id === id)
+      );
+      console.log(activity);
+
+      // return {dbSync: state.dbSync, disconnected: state.disconnected, cardData[]}
+      return state;
     case "INIT":
       return action.data;
 

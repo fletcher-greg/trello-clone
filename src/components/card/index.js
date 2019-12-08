@@ -2,7 +2,7 @@ import React, { useState, useRef, useContext } from "react";
 import { AppState } from "../../App";
 import AddNew from "./AddNew";
 import { CONSTANTS } from "../../store/actions/index";
-export default ({ listID, card }) => {
+export default ({ listID, card, setFlash }) => {
   const [state, dispatch] = useContext(AppState);
   const [text, setText] = useState("false");
   const [newCard, setNewCard] = useState(false);
@@ -44,7 +44,13 @@ export default ({ listID, card }) => {
         </textarea>
         {card.cards.map(card => (
           <div key={card.id} className="list-cards">
-            <a className="card-click">
+            <a
+              className="card-click"
+              onClick={() => {
+                console.log({ listID: listID, card });
+                setFlash({ listID: listID, card });
+              }}
+            >
               <span className="card-label"></span>
               <p className="card-title">{card.text}</p>
             </a>
