@@ -7,7 +7,7 @@ import Disconnected from "../../components/errors/Disconnected";
 import { CONSTANTS } from "../../store/actions";
 export default () => {
   const [state, dispatch] = useContext(AppState);
-  const [discon, setDiscon] = useState(state.disconnected);
+  const discon = state.disconnected;
 
   useEffect(() => {
     async function fetchData() {
@@ -20,12 +20,11 @@ export default () => {
     fetchData();
   }, []);
   useEffect(() => {
-    setDiscon(state.disconnected);
-    console.log("wooohooo");
-  });
+    console.log("disconnected");
+  }, [discon]);
   return (
     <main className="Home">
-      {discon && <Disconnected />}
+      {/* {discon && <Disconnected />} */}
       <div className="cards-wrapper">
         {state.cardData.map(card => (
           <Card listID={card.id} card={card} />

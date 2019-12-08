@@ -49,11 +49,12 @@ export const listReducer = (state, action) => {
       return { dbSync: false, cardData: [...state.cardData] };
     case CONSTANTS.DISCONNECTED:
       const theState = state.cardData.filter(card => {
-        if (card.id < 2) {
+        if (card.id !== action.id) {
+          console.log("hi");
           return card;
         }
       });
-
+      console.log("got this far");
       return {
         dbSync: state.dbSync,
         disconnected: true,

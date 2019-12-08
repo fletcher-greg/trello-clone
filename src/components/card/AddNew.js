@@ -8,7 +8,7 @@ export default ({ placeHolder, title, type, id }) => {
   const [state, dispatch] = useContext(AppState);
   const [text, setText] = useState("");
   const [data, setData] = useState("");
-  const [once, setOnce] = useState("");
+  const [once, setOnce] = useState(0);
   const [open, setOpen] = useState(false);
   useEffect(() => {
     async function sendData() {
@@ -55,7 +55,7 @@ export default ({ placeHolder, title, type, id }) => {
         <>
           <button
             onMouseDown={() => {
-              setOnce("hi");
+              setOnce(once + 1);
               //   setData(
               //     id ? { type, payload: text, id } : { type, payload: text }
               //   );
