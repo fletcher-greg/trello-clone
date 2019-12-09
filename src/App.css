@@ -2,6 +2,25 @@ ul {
   list-style-type: none;
 }
 
+/* causes error by adding overflow to flash card (right hand side) */
+
+/* body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #fff1d0;
+  background-color: #fff1d0;
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+  background-color: #ff784f;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+
+  -webkit-box-shadow: inset 0 0 6px #ff784f;
+  background-color: #ff784f;
+} */
+
 /* HOME */
 
 .Home {
@@ -87,13 +106,56 @@ ul {
 
 .site-footer {
   padding: 80px 40px;
-  height: 25em;
+  height: 30em;
   background-color: #3a3042;
 }
 
 .footer-container {
   padding: 0 80px;
   max-width: 1440px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.footer-column {
+  width: 100%;
+}
+.footer-col-title {
+  font-size: 1.7rem;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+.links-wrapper {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+.links-wrapper > a {
+  margin-bottom: 1em;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.important-links {
+  margin-left: auto;
+  width: 20em;
+  text-align: center;
+}
+.important-links > h2 {
+  margin-bottom: 1em;
+}
+.social-links-container {
+  width: 20em;
+  display: flex;
+  justify-content: space-evenly;
+}
+.links-svgs {
+  height: 3vh;
 }
 
 /* CARD */
