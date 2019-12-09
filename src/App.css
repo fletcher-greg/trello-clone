@@ -48,6 +48,39 @@ ul {
   font-size: 22px;
 }
 
+/* INFO-BAR */
+
+.info-bar {
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background: #564787;
+}
+.board-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 45em;
+}
+
+.board-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2em;
+}
+.bar-btn {
+  background: #2e294e;
+  color: white;
+  padding: 0.8em 1em;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
 /* FOOTER */
 
 /* site-footer */
@@ -69,8 +102,10 @@ ul {
   padding: 2em 1em;
   width: 272px;
   margin-left: 1em;
+  margin-top: 1em;
   min-height: 500px;
   background-color: #f2fdff;
+  border-radius: 20px;
 }
 .add-new-card {
   width: 272px;

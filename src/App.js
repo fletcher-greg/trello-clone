@@ -12,6 +12,7 @@ import Nav from "./components/nav";
 import Footer from "./components/footer";
 import Hero from "./pages/hero";
 import Login from "./pages/login";
+import InfoBar from "./components/info-nav";
 import Register from "./pages/register";
 import { initState, listReducer } from "./store/index";
 
@@ -32,18 +33,23 @@ function App() {
         <UserLogin.Provider value={[user, setUser]}>
           <AppState.Provider value={[state, dispatch]}>
             <Nav />
+
             <Switch>
               <Route exact path="/">
                 <Hero />
+                <Footer />
               </Route>
               <Route path="/home">
+                <InfoBar user={"Dawkins"} />
                 <Home state={state} />
               </Route>
               <Route path="/contact">
                 <Contact />
+                <Footer />
               </Route>
               <Route path="/about">
                 <About />
+                <Footer />
               </Route>
               <Route path="/login">
                 {user ? <Redirect to="/" /> : <Login />}
@@ -52,7 +58,6 @@ function App() {
                 {user ? <Redirect to="/" /> : <Register />}
               </Route>
             </Switch>
-            <Footer />
           </AppState.Provider>
         </UserLogin.Provider>
       </div>
